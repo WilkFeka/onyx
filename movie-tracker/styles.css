@@ -1,0 +1,227 @@
+:root {
+    --violet-light: #E6E6FA;
+    --violet-medium: #9370DB;
+    --violet-dark: #261e54;
+    --text-color: #333;
+    --background-color: #F0F0F0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background: linear-gradient(135deg, var(--violet-light) 0%, var(--background-color) 100%);
+    min-height: 100vh;
+}
+
+/* Navigation Styles */
+.main-nav {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main-nav nav {
+    max-width: 75rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--violet-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--violet-medium);
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-icons button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.nav-icons button:hover {
+    transform: scale(1.1);
+}
+
+/* Main Content */
+main {
+    padding: 1.25rem;
+    display: flex;
+    justify-content: center;
+}
+
+#movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 1.25rem;
+    width: 100%;
+    max-width: 75rem;
+}
+
+.movie-card {
+    background: white;
+    border-radius: 0.9375rem;
+    overflow: hidden;
+    box-shadow: 0 0.625rem 1.25rem rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, white 0%, var(--violet-light) 100%);
+    height: 100%;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-cover {
+    width: 100%;
+    height: 21.875rem;
+    object-fit: cover;
+}
+
+.movie-info {
+    padding: 0.9375rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-grow: 1;
+}
+
+.movie-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 2.4rem;
+}
+
+.movie-director {
+    font-size: 0.9rem;
+    color: rgba(0,0,0,0.7);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-year {
+    font-size: 0.9rem;
+    color: rgba(0,0,0,0.6);
+}
+
+.movie-rating {
+    color: var(--violet-medium);
+    font-weight: bold;
+    font-size: 1.1rem;
+    align-self: flex-end;
+    margin-top: auto;
+}
+
+@media (max-width: 48rem) {
+    .main-nav nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    #movie-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .movie-card {
+        flex-direction: row;
+        height: 12.5rem;
+        align-items: stretch;
+    }
+
+    .movie-cover {
+        width: 8.4375rem;
+        height: 100%;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+
+    .movie-info {
+        flex-grow: 1;
+        display: grid;
+        grid-template-areas: 
+            "title title"
+            "director rating"
+            "year rating";
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.9375rem;
+    }
+
+    .movie-title {
+        grid-area: title;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+
+    .movie-director {
+        grid-area: director;
+    }
+
+    .movie-year {
+        grid-area: year;
+    }
+
+    .movie-rating {
+        grid-area: rating;
+        align-self: center;
+        margin-top: 0;
+    }
+}
