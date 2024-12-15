@@ -1,0 +1,234 @@
+:root {
+    --violet-light: #E6E6FA;
+    --violet-medium: #9370DB;
+    --violet-dark: #261e54;
+    --text-color: #333;
+    --background-color: #F0F0F0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background: linear-gradient(135deg, var(--violet-light) 0%, var(--background-color) 100%);
+    min-height: 100vh;
+}
+
+/* Navigation Styles */
+.main-nav {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main-nav nav {
+    max-width: 75rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--violet-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--violet-medium);
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-icons button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.nav-icons button:hover {
+    transform: scale(1.1);
+}
+
+h1 {
+    margin-top: 2rem;
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--violet-dark);
+    text-align: center;
+}
+/* Main Content */
+main {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+#home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); /* Hacer las tarjetas más pequeñas */
+    gap: 1rem;
+    width: 100%;
+    max-width: 50rem; /* Limita el tamaño total */
+    padding: 1rem;
+    justify-items: center; /* Centra las tarjetas dentro de la cuadrícula */
+}
+
+.home-card {
+    background: white;
+    border-radius: 0.9375rem;
+    overflow: hidden;
+    box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, white 0%, var(--violet-light) 100%);
+    aspect-ratio: 1; /* Asegura que las tarjetas sean cuadradas */
+    width: 100%;
+    max-width: 12rem; /* Limita el tamaño máximo de la tarjeta */
+}
+
+.home-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;    
+}
+
+.home-info {
+    padding: 0.9375rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-grow: 1;
+    text-align: center; /* Centra el texto */
+}
+
+.home-title {
+    font-size: 1rem; /* Tamaño de texto más pequeño */
+    font-weight: 600;
+    color: var(--text-color);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 2rem; /* Ajusta el espacio de título */
+}
+
+.home-icon {
+    font-size: 3rem; /* Tamaño del icono */
+    color: var(--violet-medium); /* Color del icono */
+    margin-bottom: 1rem; /* Espaciado debajo del icono */
+}
+
+/* Estilos para dispositivos móviles */
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+    /* Estilos para las tarjetas */
+    #home-grid {
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); /* Aumentar el tamaño mínimo de las tarjetas */
+        gap: 1.5rem; /* Aumentar la separación entre tarjetas */
+    }
+
+    .home-card {
+        max-width: 90%; /* Hacer que las tarjetas ocupen el 90% del ancho del contenedor */
+    }
+
+    /* Aumentar el tamaño del texto y del icono en mobile */
+    .home-title {
+        font-size: 1.25rem; /* Aumentar tamaño del texto */
+    }
+
+    .home-icon {
+        font-size: 4rem; /* Aumentar tamaño del icono */
+    }
+
+    /* Estilos para el nav */
+    .main-nav {
+        padding: 1rem 0;
+    }
+
+    .nav-links {
+        display: none; /* Ocultar los enlaces de navegación en móviles */
+        flex-direction: column; /* Alinear los enlaces en columna */
+        gap: 1rem;
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex; /* Mostrar los enlaces cuando el menú esté activo */
+    }
+
+    .nav-links li {
+        list-style: none;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: var(--text-color);
+    }
+
+    .logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .logo-png {
+        display: none; /* Ocultar logo-png en móviles */
+    }
+
+    /* Botón para el menú en mobile */
+    .nav-toggle {
+        display: block;
+        background-color: transparent;
+        border: none;
+        font-size: 2rem;
+        color: var(--violet-medium);
+        cursor: pointer;
+    }
+
+    /* Cuando el menú se active (cuando el toggle sea presionado) */
+    .nav-links.active {
+        display: flex;
+    }
+}
