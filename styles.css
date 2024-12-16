@@ -13,6 +13,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: var(--violet-dark);
+}
+
 html {
     font-size: 16px;
 }
@@ -83,12 +88,15 @@ body {
     transform: scale(1.1);
 }
 
-h1 {
+.title {
     margin-top: 2rem;
     font-size: 4rem;
     font-weight: 600;
     color: var(--violet-dark);
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* Main Content */
 main {
@@ -130,7 +138,7 @@ main {
 }
 
 .home-info {
-    padding: 0.9375rem;
+    padding: 3rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -159,6 +167,9 @@ main {
 /* Estilos para dispositivos móviles */
 /* Estilos para dispositivos móviles */
 @media (max-width: 767px) {
+    h1 {
+        font-size: 2rem; /* Ajustar tamaño del título */
+    }
     /* Estilos para las tarjetas */
     #home-grid {
         grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); /* Aumentar el tamaño mínimo de las tarjetas */

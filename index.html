@@ -11,16 +11,18 @@
 <body>
     <header class="main-nav">
         <nav>
-            <div class="logo">
-                <img src="../image/logo.png" alt="" height="24px">
-                Onyx
-            </div>
-            <div class="logo-png"></div>
+            <a href="/index.html">
+
+                <div class="logo">
+                    <img src="../image/logo.png" alt="" height="24px">
+                    Onyx
+                </div>
+            </a>
             <ul class="nav-links">
-                <li><a href="#" class="active">Inicio</a></li>
-                <li><a href="#">Bookmarks</a></li>
-                <li><a href="#">Movie Tracker</a></li>
-                <li><a href="#">To Do List</a></li>
+                <li><a href="/index.html" class="active">Inicio</a></li>
+                <li><a href="/bookmarks/bookmarks.html">Bookmarks</a></li>
+                <li><a href="/movie-tracker/movie-tracker.html">Movie Tracker</a></li>
+                <li><a href="/to-do-list/to-do-list.html">To Do List</a></li>
             </ul>
             <!-- <div class="nav-icons">
                 <button class="search-btn">🔍</button>
@@ -28,36 +30,40 @@
             </div> -->
         </nav>
     </header>
-    <h1>Onyx</h1>
+    <div class="title">
+        <!-- <img src="/image/logo.png" alt="" height="120"> -->
+        <h1> Welcome to Onyx</h1>
+
+    </div>
     
     <main>
         <div id="home-grid">
             <div class="home-card">
-                <div class="movie-info">
-                    <i class="material-icons home-icon">book</i>
-                    <p class="home-title">Bookmarks</p>
-                </div>
+                <a href="/bookmarks/bookmarks.html" class="home-info">
+                        <i class="material-icons home-icon">book</i>
+                        <p class="home-title">Bookmarks</p>
+                </a>
             </div>
 
             <div class="home-card">
-                <div class="movie-info">
+                <a href="/movie-tracker/movie-tracker.html" class="home-info">
                     <i class="material-icons home-icon">live_tv</i>
                     <p class="home-title">Movie Tracker</p>
-                </div>
+                </a>
             </div>
 
             <div class="home-card">
-                <div class="movie-info">
+                <a href="/to-do-list/to-do-list.html" class="home-info">
                     <i class="material-icons home-icon">checklist</i>
                     <p class="home-title">To Do List</p>
-                </div>
+                </a>
             </div>
 
             <div class="home-card">
-                <div class="movie-info">
+                <a href="/games/games.html  " class="home-info">
                     <i class="material-icons home-icon">sports_esports</i>
                     <p class="home-title">Games</p>
-                </div>
+                </a>
             </div>
 
         </div> 
